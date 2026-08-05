@@ -53,3 +53,70 @@ body{
     color: #8b949e;
     font-size: 1rem;
 }
+
+.about{
+    margin-top: 40px;
+    background: #161b22;
+    border-radius: 20px;
+    padding: 35px;
+}
+
+.about h3{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #58a8ff;
+}
+
+.about p{
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #c9d1d9;
+    text-align: justify;
+}
+
+.skill{
+    margin-top: 40px;
+    padding: 35px;
+    background: #161b22;
+    border-radius: 20px;
+}
+
+.skill h3{
+    font-size: 2rem;
+    color: #58a8ff;
+    margin-bottom: 20px;
+}
+
+.skill-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 25px;
+}
+
+.skill-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+}
+
+.skill-icon{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-icon img{
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.skill-card span{
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;}
