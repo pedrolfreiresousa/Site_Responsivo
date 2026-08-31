@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+/*Principal design*/
+
+
 body{
     font-family:Arial, Helvetica, sans-serif;
     background-color:#0d1117;
@@ -64,7 +67,7 @@ body{
 .about h3{
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #58a8ff;
+    color: #58a6ff;
 }
 
 .about p{
@@ -212,4 +215,165 @@ body{
     background: #30363d;
     border-color: #58a6ff;
     color: #58a6ff;
+}
+
+.contact{
+    margin-top: 40px;
+    padding: 35px;
+    background: #161b22;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.contact h3{
+    font-size: 2rem;
+    color: #58a8ff;
+    margin-bottom: 30px;
+}
+
+.contact-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.contact-item a{
+    color: #e6edf3;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.contact-item a:hover{
+    color: #58a6ff;
+}
+
+
+/*responsive design*/
+
+@media (max-width: 768px){
+
+    .profile{
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .profile-img{
+        width: 140px;
+        height: 140px;
+    }
+
+    .profile-info h1{
+        font-size: 2rem;
+    }
+    
+    .container{
+        width: 92%;
+        padding: 30px 0;
+    }
+
+    .about{
+        padding: 25px;
+    }
+
+    .about h3{
+        font-size: 1.7rem;
+    }
+
+    .about p{
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .skill{
+        padding: 25px;
+    }
+
+    .skill h3{
+        font-size: 1.7rem;
+    }
+
+    .skill-list{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .skill-card{
+        padding: 15px;
+    }
+
+    .skill-icon{
+        width: 60px;
+        height: 60px;
+    }
+
+    .skill-icon img{
+        width: 45px;
+        height: 45px;
+    }
+
+    .projects{
+        padding: 25px;
+    }
+
+    .projects h3{
+        font-size: 1.7rem;
+    }
+
+    .projects-grid{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card{
+        min-height: 380px;
+        padding: 18px;
+    }
+
+    .project-card img{
+        height: 170px;
+    }
+
+    .project-card-buttons{
+        gap: 10px;
+    }
+
+    .project-btn{
+        flex: 1;
+        text-align: center;
+    }
+
+    .contact{
+        padding: 25px;
+    }
+
+    .contact h3{
+        font-size: 1.7rem;
+    }
+
+    .contact-links{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-item{
+        justify-content: center;
+    }
+
+
 }
