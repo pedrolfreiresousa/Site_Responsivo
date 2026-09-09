@@ -34,6 +34,9 @@ body{
     width: 100%;
     background-color: #161b22;
     border-bottom: 1px solid #30363d;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .top-options-content {
