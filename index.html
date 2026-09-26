@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Online</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -152,11 +153,29 @@
 
             <div class="projects-grid">
 
-                <div class="project-card">
+                <div class="project-card" data-project="portfolio">
+
+                    <h4 data-i18n="portfolio-title">Portfólio Online</h4>
+
+                    <div class="project-card-img">
+                        <img src="img/portfolio.png" alt="Projeto 1">
+                    </div>
+
+                    <div class="project-card-description">
+                        <p data-i18n="portfolio-descripition">Portfólio pessoal desenvolvido para apresentar projetos, habilidades, diplomas e certificados, com suporte a português e inglês e layout responsivo.</p>
+                    </div>
+
+                    <div class="project-card-buttons">
+                        <a href="https://github.com/pedrolfreiresousa/Site_Responsivo" class="project-btn" target="_blank" rel="noopener noreferrer" data-i18="github-btn">Ver no Github</a>
+                    </div>
+
+                </div>
+
+                <div class="project-card" data-project="discord">
                     <h4 data-i18n="discord-bot-title"> Bot de Monitoramento - Twitter (X) </h4>
 
                     <div class="project-card-img">
-                        <img src="img/discord_bot.png" alt="Projeto 1">
+                        <img src="img/discord_bot.png" alt="Projeto 2">
                     </div>
                     
                     <div class="project-card-description">
@@ -406,12 +425,12 @@
             <button class="project-modal-close" id="project-modal-close" type="button">&times;</button>
 
             <div class="project-modal-img">
-                <img src="img/discord_bot.png" alt="Código do Bot de Monitoramento do Twitter (X)">
+                <img src="img/discord_bot.png" id="project-modal-image" alt="Código do Bot de Monitoramento do Twitter (X)">
             </div>
 
-            <h3 data-i18n="discord-bot-title">Bot de Monitoramento - Twitter (X)</h3>
+            <h3 id="project-modal-title" data-i18n="discord-bot-title">Bot de Monitoramento - Twitter (X)</h3>
 
-            <p data-i18n="discord-bot-description">Sistema desenvolvido em Python para monitorar publicações de contas específicas do Twitter (X) e encaminhar automaticamente novos conteúdos para o Discord, utilizando APIs, autenticação JWT, SQLite e processamento assíncrono.</p>
+            <p id="project-modal-description" data-i18n="discord-bot-description">Sistema desenvolvido em Python para monitorar publicações de contas específicas do Twitter (X) e encaminhar automaticamente novos conteúdos para o Discord, utilizando APIs, autenticação JWT, SQLite e processamento assíncrono.</p>
 
             <div class="project-modal-technologies">
 

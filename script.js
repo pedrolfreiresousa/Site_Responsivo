@@ -13,6 +13,8 @@ const translation = {
         projects: "Projetos",
         "discord-bot-title": "Bot de Monitoramento - Twitter (X)",
         "discord-bot-description": "Sistema desenvolvido em Python para monitorar publicações de contas específicas do Twitter (X) e encaminhar automaticamente novos conteúdos para o Discord, utilizando APIs, autenticação JWT, SQLite e processamento assíncrono.",
+        "portfolio-title": "Portfólio Online",
+        "portfolio-descripition": "Portfólio pessoal desenvolvido para apresentar projetos, habilidades, diplomas e certificados, com suporte a português e inglês e layout responsivo.",
         "github-btn": "Ver no GitHub",
         "demo-btn": "Ver Demo",
         contact: "Contatos",
@@ -32,6 +34,8 @@ const translation = {
         projects: "Projects",
         "discord-bot-title": "Monitoring Bot - Twitter (X)",
         "discord-bot-description": "Python-based system that monitors posts from specific Twitter (X) accounts and automatically forwards new content to Discord, using APIs, JWT authentication, SQLite, and asynchronous processing.",
+        "portfolio-title": "Online Portfolio",
+        "portfolio-descripition": "Personal portfolio developed to showcase projects, skills, diplomas, and certificates, with Portuguese and English support and a responsive layout.",
         "github-btn": "View on GitHub",
         "demo-btn": "View Demo",
         contact: "Contacts",
@@ -86,18 +90,57 @@ const savedLanguage = localStorage.getItem("language")  ||  "pt";
 
 changeLanguage(savedLanguage);
 
-// Modal do projeto
+
+// Modal dos projetos
 const projectModal = document.querySelector("#project-modal");
 const projectModalClose = document.querySelector("#project-modal-close");
 const projectCards = document.querySelectorAll(".project-card");
 
+const projectModalImage = document.querySelector("#project-modal-image");
+const projectModalTitle = document.querySelector("#project-modal-title");
+const projectModalDescription = document.querySelector("#project-modal-description");
+
+const projectsData = {
+    discord: {
+        image: "img/discord_bot.png",
+        alt: "Código do Bot de Monitoramento do Twitter (X)",
+        titleKey: "discord-bot-title",
+        descriptionKey: "discord-bot-description"
+    },
+
+    portfolio: {
+        image: "img/portfolio.png",
+        alt: "Prévia do Portfólio Online",
+        titleKey: "portfolio-title",
+        descriptionKey: "portfolio-description"
+    }
+};
+
 projectCards.forEach((card) => {
+
     card.addEventListener("click", (event) => {
 
-        // Não abre o modal quando clicar em um botão
         if (event.target.closest(".project-btn")) {
             return;
         }
+
+        const projectId = card.dataset.project || "discord";
+        const project = projectsData[projectId];
+
+        if (!project) {
+            return;
+        }
+
+        projectModalImage.src = project.image;
+        projectModalImage.alt = project.alt;
+
+        const currentLanguage = localStorage.getItem("language") || "pt";
+
+        projectModalTitle.textContent =
+            translation[currentLanguage][project.titleKey];
+
+        projectModalDescription.textContent =
+            translation[currentLanguage][project.descriptionKey];
 
         projectModal.classList.add("active");
     });
@@ -110,7 +153,9 @@ projectModalClose.addEventListener("click", () => {
 
 // Fecha ao clicar fora da janela
 projectModal.addEventListener("click", (event) => {
+
     if (event.target === projectModal) {
         projectModal.classList.remove("active");
     }
+
 });

@@ -639,3 +639,10 @@ body{
 
 
 }
+
+@media (max-width: 340px){
+
+    .certificates-grid{
+        grid-template-columns: 1fr;
+    }
+}
