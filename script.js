@@ -14,13 +14,18 @@ const translation = {
         "discord-bot-title": "Bot de Monitoramento - Twitter (X)",
         "discord-bot-description": "Sistema desenvolvido em Python para monitorar publicações de contas específicas do Twitter (X) e encaminhar automaticamente novos conteúdos para o Discord, utilizando APIs, autenticação JWT, SQLite e processamento assíncrono.",
         "portfolio-title": "Portfólio Online",
-        "portfolio-descripition": "Portfólio pessoal desenvolvido para apresentar projetos, habilidades, diplomas e certificados, com suporte a português e inglês e layout responsivo.",
+        "portfolio-description": "Portfólio pessoal desenvolvido para apresentar projetos, habilidades, diplomas e certificados, com suporte a português e inglês e layout responsivo.",
         "github-btn": "Ver no GitHub",
         "demo-btn": "Ver Demo",
         contact: "Contatos",
         technologies: "Tecnologias usadas no projeto",
         certificates: "Diplomas e Certificados",
         "view-document": "Ver Documento",
+        "support-title": "Apoie meu trabalho! 💙",
+        "support-description": "Se você gostou dos meus projetos e quiser apoiar minha jornada como desenvolvedor, você pode contribuir via PIX.",
+        "pix-key": "Chave PIX",
+        "copy-pix": "Copiar chave",
+        "pix-copied": "Chave copiada!",
     },
 
     en:{
@@ -35,13 +40,18 @@ const translation = {
         "discord-bot-title": "Monitoring Bot - Twitter (X)",
         "discord-bot-description": "Python-based system that monitors posts from specific Twitter (X) accounts and automatically forwards new content to Discord, using APIs, JWT authentication, SQLite, and asynchronous processing.",
         "portfolio-title": "Online Portfolio",
-        "portfolio-descripition": "Personal portfolio developed to showcase projects, skills, diplomas, and certificates, with Portuguese and English support and a responsive layout.",
+        "portfolio-description": "Personal portfolio developed to showcase projects, skills, diplomas, and certificates, with Portuguese and English support and a responsive layout.",
         "github-btn": "View on GitHub",
         "demo-btn": "View Demo",
         contact: "Contacts",
         technologies: "Technologies used in the project",
         certificates: "Diplomas and Certificates",
         "view-document": "View Document",
+        "support-title": "Support my work! 💙",
+        "support-description": "If you enjoyed my projects and would like to support my journey as a developer, you can contribute via PIX.",
+        "pix-key": "PIX Key",
+        "copy-pix": "Copy key",
+        "pix-copied": "Key copied!",
 
     }
 
@@ -158,4 +168,40 @@ projectModal.addEventListener("click", (event) => {
         projectModal.classList.remove("active");
     }
 
+});
+
+// Modal de apoio via PIX
+const supportModal = document.querySelector("#support-modal");
+const supportModalClose = document.querySelector("#support-modal-close");
+const supportButton = document.querySelector(".support-btn");
+
+supportButton.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    supportModal.classList.add("active");
+});
+
+supportModalClose.addEventListener("click", () => {
+    supportModal.classList.remove("active");
+});
+
+supportModal.addEventListener("click", (event) => {
+    if (event.target === supportModal) {
+        supportModal.classList.remove("active");
+    }
+});
+
+const pixCopyButton = document.querySelector("#pix-copy-btn");
+const pixKey = document.querySelector("#pix-key");
+
+pixCopyButton.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(pixKey.textContent.trim());
+
+    const currentLanguage = localStorage.getItem("language") || "pt";
+
+    pixCopyButton.textContent = translation[currentLanguage]["pix-copied"];
+
+    setTimeout(() => {
+        pixCopyButton.textContent = translation[currentLanguage]["copy-pix"];
+    }, 2000);
 });
