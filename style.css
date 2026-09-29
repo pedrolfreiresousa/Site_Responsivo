@@ -161,7 +161,7 @@ body{
 
 .skill h3{
     font-size: 2rem;
-    color: #58a8ff;
+    color: #58a6ff;
     margin-bottom: 20px;
 }
 
@@ -209,7 +209,7 @@ body{
 
 .projects h3{
     font-size: 2rem;
-    color: #58a8ff;
+    color: #58a6ff;
     margin-bottom: 30px;
 }
 
@@ -302,7 +302,7 @@ body{
 
 .contact h3{
     font-size: 2rem;
-    color: #58a8ff;
+    color: #58a6ff;
     margin-bottom: 30px;
 }
 
@@ -461,7 +461,7 @@ body{
 
 .certificates h3 {
     font-size: 2rem;
-    color: #58a8ff;
+    color: #58a6ff;
     margin-bottom: 30px;
 }
 
@@ -740,8 +740,8 @@ body{
         padding: 18px;
     }
 
-    .project-card img{
-        height: 170px;
+    .project-card-img img {
+    height: 170px;
     }
 
     .project-card-buttons{

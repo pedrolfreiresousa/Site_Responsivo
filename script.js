@@ -109,20 +109,39 @@ const projectCards = document.querySelectorAll(".project-card");
 const projectModalImage = document.querySelector("#project-modal-image");
 const projectModalTitle = document.querySelector("#project-modal-title");
 const projectModalDescription = document.querySelector("#project-modal-description");
+const projectModalTechList = document.querySelector(".project-modal-tech-list");
+const projectModalGithub = document.querySelector(".project-modal-content .project-btn");
 
 const projectsData = {
     discord: {
         image: "img/discord_bot.png",
-        alt: "Código do Bot de Monitoramento do Twitter (X)",
+        alt: "Prévia do Bot de Monitoramento do Twitter (X)",
         titleKey: "discord-bot-title",
-        descriptionKey: "discord-bot-description"
+        descriptionKey: "discord-bot-description",
+        technologies: [
+            "Python",
+            "FastAPI",
+            "Discord.py",
+            "SQLite",
+            "JWT",
+            "HTTPX",
+            "Asyncio"
+        ],
+        github: "https://github.com/pedrolfreiresousa/discord_bots"
     },
 
     portfolio: {
         image: "img/portfolio.png",
         alt: "Prévia do Portfólio Online",
         titleKey: "portfolio-title",
-        descriptionKey: "portfolio-description"
+        descriptionKey: "portfolio-description",
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Responsive Design"
+        ],
+        github: "https://github.com/pedrolfreiresousa/Site_Responsivo"
     }
 };
 
@@ -151,6 +170,16 @@ projectCards.forEach((card) => {
 
         projectModalDescription.textContent =
             translation[currentLanguage][project.descriptionKey];
+        
+        projectModalTechList.innerHTML = "";
+
+        project.technologies.forEach((technology) => {
+            const technologyElement = document.createElement("span");
+            technologyElement.textContent = technology;
+            projectModalTechList.appendChild(technologyElement);
+        });
+
+        projectModalGithub.href = project.github;
 
         projectModal.classList.add("active");
     });
@@ -204,4 +233,14 @@ pixCopyButton.addEventListener("click", async () => {
     setTimeout(() => {
         pixCopyButton.textContent = translation[currentLanguage]["copy-pix"];
     }, 2000);
+});
+
+//Fecha o modal ao clicar "Esc"
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+        projectModal.classList.remove("active");
+        supportModal.classList.remove("active");
+    }
+
 });
